@@ -1,0 +1,11 @@
+image_manifest_digest=sha256:10fd4b76e3a44002c77d6983893dc6caac9c127d47791b9cbe458dffe20dc319
+config_digest=sha256:d6f44bd4d7596b5e4c3bce07816f73288d0401531d0ec709befd2f6c535ce926
+tag=readystack/kubeproxy:v1.36.6-CE-ubuntu24.04-r5
+probe_port=10256
+probe_path=/
+probe_timeout=180
+probe_exec=/usr/local/bin/rs-probe http://127.0.0.1:10256/healthz
+verify_boot=oneshot
+verify_oneshot_arg=kube-proxy
+verify_oneshot_arg=--version
+verify_oneshot_expect=Kubernetes v1.36.6
